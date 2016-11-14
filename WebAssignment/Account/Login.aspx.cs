@@ -4,10 +4,10 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
-using WebProj.Models;
+using WebAssignment.Models;
 using System.Diagnostics;
 
-namespace WebProj.Account
+namespace WebAssignment.Account
 {
     public partial class Login : Page
     {

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebProj.Account {
+namespace WebAssignment.Account {
     
     
     public partial class Login {
@@ -73,6 +73,6 @@ namespace WebProj.Account {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::WebProj.Account.OpenAuthProviders OpenAuthLogin;
+        protected global::WebAssignment.Account.OpenAuthProviders OpenAuthLogin;
     }
 }
