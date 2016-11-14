@@ -4,13 +4,11 @@ using System.Web;
 using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using Owin;
-using WebProj.Models;
+using WebAssignment.Models;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
-using Exceptions;
 
-namespace WebProj.Account
+namespace WebAssignment.Account
 {
     public partial class Register : Page
     {

@@ -8,9 +8,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
-using WebProj.Models;
+using WebAssignment.Models;
 
-namespace WebProj.Account
+namespace WebAssignment.Account
 {
     public partial class Manage : System.Web.UI.Page
     {
