@@ -10,7 +10,7 @@
 namespace WebAssignment.Account {
     
     
-    public partial class Manage {
+    public partial class Join {
         
         /// <summary>
         /// successMessage control.
