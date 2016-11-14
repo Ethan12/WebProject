@@ -35,8 +35,8 @@ namespace WebAssignment.Account
 
                 foreach(AspNetUser s in query)
                 {
-                    s.Societies = string.Format("{0}", socVal);
-                    s.Clubs = string.Format("{0}", clubVal);
+                    s.Societies = string.Format("{0},", socVal);
+                    s.Clubs = string.Format("{0},", clubVal);
                 }
 
                 try
