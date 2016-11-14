@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebAssignment.Account {
+namespace WebProj.Account {
     
     
     public partial class Register {

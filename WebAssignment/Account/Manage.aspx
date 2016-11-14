@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Manage Account" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Manage.aspx.cs" Inherits="WebAssignment.Account.Manage" %>
+﻿<%@ Page Title="Manage Account" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Manage.aspx.cs" Inherits="WebProj.Account.Manage" %>
 
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
@@ -50,6 +50,36 @@
                     </dd>
                     <% } %>
                     --%>
+
+                    <dt>Your Society:</dt>
+                    <dd>
+                        <p>
+                            <%if (hasSocieties)
+                                { %>
+                            <%: SocietyNames %>
+                            <%}
+                             else
+                                {
+                                    %>
+                            <asp:Label runat="server" Text="No Society" />
+                            <%} %>
+                        </p>
+                    </dd>
+
+                    <dt>Your Clubs:</dt>
+                    <dd>
+                        <p>
+                            <%if (hasClubs)
+                                { %>
+                            <%: ClubNames %>
+                            <%}
+                             else
+                                {
+                                    %>
+                            <asp:Label runat="server" Text="No Society" />
+                            <%} %>
+                        </p>
+                    </dd>
 
                     <dt>Two-Factor Authentication:</dt>
                     <dd>
