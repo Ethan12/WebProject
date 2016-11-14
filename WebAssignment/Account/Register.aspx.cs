@@ -62,7 +62,7 @@ namespace WebAssignment.Account
                 {
                     string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
                     manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
-                }catch(InvalidApiRequestException iar)
+                }catch(Exception iar)
                 {
                     Debug.WriteLine(iar.Message);
                 }
