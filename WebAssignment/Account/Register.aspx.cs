@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity.Owin;
 using WebAssignment.Models;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
+using Exceptions;
 
 namespace WebAssignment.Account
 {

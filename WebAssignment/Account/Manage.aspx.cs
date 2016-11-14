@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
 using WebAssignment.Models;
+using System.Diagnostics;
 
 namespace WebAssignment.Account
 {
@@ -62,7 +63,7 @@ namespace WebAssignment.Account
             {
                 societies = (from s in db.AspNetUsers
                              where s.Id == User.Identity.GetUserId()
-                             select s.Society).FirstOrDefault().ToString();
+                             select s.Societies).FirstOrDefault().ToString();
             }
             catch (Exception qe)
             {
