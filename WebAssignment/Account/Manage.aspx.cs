@@ -38,6 +38,10 @@ namespace WebAssignment.Account
 
         public bool hasClubs { get; set; }
 
+        public List<string> Societies { get; set; }
+
+        public List<string> Clubs { get; set; }
+
         public bool TwoFactorBrowserRemembered { get; private set; }
 
         public int LoginsCount { get; set; }
@@ -89,6 +93,9 @@ namespace WebAssignment.Account
                     {
                         Debug.WriteLine(se.Message);
                     }
+
+
+                    var query = from n in db.Society
 
                     if (!(x == splitSocieties.Count() - 1))
                     {

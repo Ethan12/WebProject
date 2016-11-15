@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="aspnet-WebAssignment-20161114041541" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-WebAssignment-20161114041541.mdf;Initial Catalog=aspnet-WebAssignment-20161114041541;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DefaultConnection" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[__MigrationHistory]" Member="__MigrationHistories">
+    <Type Name="__MigrationHistory">
+      <Column Name="MigrationId" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ContextKey" Type="System.String" DbType="NVarChar(300) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ProductVersion" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.SocietyRegistration" Member="SocietyRegistrations">
     <Type Name="SocietyRegistration">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -9,14 +17,6 @@
       <Column Name="isActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="AspNetUser_SocietyRegistration" Member="AspNetUser" ThisKey="StudentId" OtherKey="Id" Type="AspNetUser" IsForeignKey="true" />
       <Association Name="Society_SocietyRegistration" Member="Society" ThisKey="SocietyId" OtherKey="Id" Type="Society" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.[__MigrationHistory]" Member="__MigrationHistories">
-    <Type Name="__MigrationHistory">
-      <Column Name="MigrationId" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ContextKey" Type="System.String" DbType="NVarChar(300) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Model" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="ProductVersion" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.AspNetRoles" Member="AspNetRoles">
@@ -82,7 +82,8 @@
       <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="Image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="AdminId" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="PageKey" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="AdminId" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
       <Association Name="Club_ClubRegistration" Member="ClubRegistrations" ThisKey="Id" OtherKey="ClubId" Type="ClubRegistration" />
       <Association Name="AspNetUser_Club" Member="AspNetUser" ThisKey="AdminId" OtherKey="Id" Type="AspNetUser" IsForeignKey="true" />
     </Type>
@@ -104,7 +105,8 @@
       <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="Image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="AdminId" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="PageKey" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="AdminId" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
       <Association Name="Society_SocietyRegistration" Member="SocietyRegistrations" ThisKey="Id" OtherKey="SocietyId" Type="SocietyRegistration" />
       <Association Name="AspNetUser_Society" Member="AspNetUser" ThisKey="AdminId" OtherKey="Id" Type="AspNetUser" IsForeignKey="true" />
     </Type>

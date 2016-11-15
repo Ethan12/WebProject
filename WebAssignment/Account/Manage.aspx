@@ -61,7 +61,7 @@
                              else
                                 {
                                     %>
-                            <asp:Label runat="server" Text="No Society" />
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Account/Join.aspx">Join Club/Society</asp:HyperLink>
                             <%} %>
                         </p>
                     </dd>
@@ -76,7 +76,7 @@
                              else
                                 {
                                     %>
-                            <asp:Label runat="server" Text="No Society" />
+                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Account/Join.aspx">Join Club/Society</asp:HyperLink>
                             <%} %>
                         </p>
                     </dd>
