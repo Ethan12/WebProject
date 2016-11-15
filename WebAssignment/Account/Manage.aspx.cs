@@ -38,10 +38,6 @@ namespace WebAssignment.Account
 
         public bool hasClubs { get; set; }
 
-        public List<string> Societies { get; set; }
-
-        public List<string> Clubs { get; set; }
-
         public bool TwoFactorBrowserRemembered { get; private set; }
 
         public int LoginsCount { get; set; }
@@ -95,19 +91,34 @@ namespace WebAssignment.Account
                     }
 
 
-                    var query = from n in db.Society
+                    var query = from society in db.Societies
+                                where society.Name == societyName
+                                select society;
 
+                    string pageKey = "";
+
+                    foreach(Society s in query)
+                    {
+                        pageKey = s.PageKey;
+                    }
+
+                    string link = "<a href=\"" + HttpContext.Current.Request.Url.Host + ":" + HttpContext.Current.Request.Url.Port + "/Account/View.aspx?p=" + pageKey + "\">" + societyName + "</a>";
+
+                    Debug.WriteLine("LINK: " + link);  
+                      
                     if (!(x == splitSocieties.Count() - 1))
                     {
-                        SocietyNames = SocietyNames + societyName + ", ";
+                        SocietyNames = SocietyNames + link + ", ";
                     }
                     else
                     {
-                        SocietyNames = SocietyNames + societyName;
+                        SocietyNames = SocietyNames + link;
                     }
                 }
 
                 hasSocieties = true;
+
+                ltrSociety.Text = SocietyNames;
 
             }
             else

@@ -56,7 +56,7 @@
                         <p>
                             <%if (hasSocieties)
                                 { %>
-                            <%: SocietyNames %>
+                             <asp:Literal ID="ltrSociety" runat="server"></asp:Literal>
                             <%}
                              else
                                 {
