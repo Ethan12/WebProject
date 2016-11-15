@@ -34,7 +34,7 @@ namespace WebAssignment.Account
                     case "c":
                         //Case Club
                         var query = from club in db.Clubs
-                                    where club.PageKey == key
+                                    where club.PageKey == pageKey
                                     select club;
 
                         foreach(Club c in query)
@@ -48,7 +48,7 @@ namespace WebAssignment.Account
                         //Case Society
                         Debug.WriteLine("CASE SOCIETY");
                         var query2 = from society in db.Societies
-                                    where society.PageKey == key
+                                    where society.PageKey == pageKey
                                     select society;
 
                         foreach(Society s in query2)
